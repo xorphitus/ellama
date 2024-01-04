@@ -371,6 +371,7 @@ when the request completes (with BUFFER current)."
   (let ((buffer (get-buffer-create (make-temp-name ellama-buffer))))
     (display-buffer buffer)
     (with-current-buffer buffer
+      (funcall ellama-buffer-mode)
       (insert (ellama--generate-selected-provider-indicator)))
     (ellama-stream prompt :buffer buffer (point-min))))
 
